@@ -1,11 +1,13 @@
 package com.factoryproject.data;
-// Generated 2014-4-8 20:35:51 by Hibernate Tools 3.2.0.b9
+// Generated 2014-4-21 13:33:54 by Hibernate Tools 3.2.0.CR1
 
 
 
 /**
- * Represents a user and his/her security information. @author Tony Hong (with help from Hibernate)
- * 	    
+ * 			Represents a user and his/her security
+ * 			information. @author Tony Hong (with help
+ * 			from Hibernate)
+ * 		
  */
 public class User  implements java.io.Serializable {
 

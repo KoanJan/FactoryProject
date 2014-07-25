@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.factoryproject.data.News" table="NEWS">
+		<meta attribute="class-description">Represents a piece of news in the
+			database.
+			@author Tony Hong (with help from Hibernate)</meta>
+
+		<id name="id" type="int">
+			<meta attribute="scope-set">protected</meta>
+			<generator class="native" />
+		</id>
+
+		<property generated="never" name="content" not-null="true"
+			type="string" />
+
+		<property generated="never" name="publisher"
+			type="com.factoryproject.data.User" not-null="true">
+			<meta attribute="field-description">News by this user</meta>
+		</property>
+
+		<property generated="never" name="createdDate" type="timestamp">
+			<meta attribute="field-description">When the message was created</meta>
+		</property>
+
+		<property generated="never" name="modifiedDate" type="timestamp">
+			<meta attribute="field-description">When the message was modifiedDate</meta>
+		</property>
+	</class>
+</hibernate-mapping>

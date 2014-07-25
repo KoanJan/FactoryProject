@@ -1,20 +1,18 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 3.0 //EN"
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
-<!-- 
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd" -->
-        
+
 <hibernate-configuration>
 	<session-factory>
-		<!-- SQL dialect  -->
+		<!-- SQL dialect -->
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-		
+
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost/factory</property>
-		<property name="connection.username">root</property>
-		<property name="connection.password">123456</property>
+		<property name="connection.username">Tony</property>
+		<property name="connection.password">*Hongjian#1234</property>
 		<property name="connection.shutdown">true</property>
 
 		<!-- JDBC connection pool (use the built-in one) -->
@@ -30,8 +28,10 @@
 		<property name="show_sql">false</property>
 
 		<!-- List all the mapping documents we're using -->
-		<mapping resource="com/factoryproject/data/Message.hbm.xml" />
+
 		<mapping resource="com/factoryproject/data/User.hbm.xml" />
+		<mapping resource="com/factoryproject/data/Message.hbm.xml" />
+		<mapping resource="com/factoryproject/data/News.hbm.xml" />
 
 	</session-factory>
 </hibernate-configuration>

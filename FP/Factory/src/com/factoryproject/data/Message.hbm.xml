@@ -1,26 +1,23 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC 
-"-//Hibernate/Hibernate Mapping DTD//EN"
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- 
-"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
- -->
- 
+
 <hibernate-mapping>
 	<class name="com.factoryproject.data.Message" table="MESSAGE">
-		<meta attribute="class-description">Represents a single playable track in the music
-			database. @author Jim Elliott (with help from Hibernate)</meta>
+		<meta attribute="class-description">Represents a message in the
+			database. @author Tony
+			Hong (with help from Hibernate)</meta>
 
-		<id name="id">
+		<id name="id" type="int">
 			<meta attribute="scope-set">protected</meta>
 			<generator class="native" />
 		</id>
 
-		<property generated="never" name="content"
-			not-null="true" type="string" />  
+		<property generated="never" name="content" not-null="true"
+			type="string" />
 
-		<property generated="never" name="dateAdded"
-			type="date">
+		<property generated="never" name="createdDate" type="timestamp">
 			<meta attribute="field-description">When the message was created</meta>
 		</property>
 
@@ -29,10 +26,9 @@
 			<meta attribute="field-description">Messages by this user</meta>
 		</property>
 
-		<many-to-one name="replyingMessageID" cascade="all"
-			foreign-key="FK_REPLYING_MESSAGE">
-			<meta attribute="field-description">the Messages replied to</meta>
+		<many-to-one class="com.factoryproject.data.Message" name="replyingMessage"
+			cascade="all" column="RE_MESSAGE_ID" foreign-key="FK_NEXT_MESSAGE">
+			<meta attribute="use-in-tostring">true</meta>
 		</many-to-one>
-
 	</class>
 </hibernate-mapping>

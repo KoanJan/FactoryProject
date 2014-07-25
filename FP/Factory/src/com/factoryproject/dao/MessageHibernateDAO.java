@@ -163,7 +163,7 @@ public class MessageHibernateDAO extends GenericHibernateDAO<Message, Integer> {
 	 * @return The added date of the object of index MessageID
 	 */
 	public Message getReplyingMessageByID(Integer messageID) {
-		return findMessageByID(messageID).getReplyingMessageID();
+		return findMessageByID(messageID).getReplyingMessage();
 	}
 
 	/**
