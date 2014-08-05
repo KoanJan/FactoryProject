@@ -1,46 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC 
-"-//Hibernate/Hibernate Mapping DTD //EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- 
-"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
- -->
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class 
-	   name="com.factoryproject.data.User" 
-	   table="USER">
-	    <meta
-	        attribute="class-description">Represents a user and his/her security information. @author Tony Hong (with help from Hibernate)
-	    </meta>
-	    
-	    <id 
-	        name="id" >
+	<class name="com.factoryproject.data.User" table="USER">
+		<meta attribute="class-description">
+			Represents a user and his/her security
+			information. @author Tony Hong (with help
+			from Hibernate)
+		</meta>
+
+		<id name="id" type="int" >
 			<meta attribute="scope-set">protected</meta>
 			<generator class="native" />
 		</id>
-	
-		<property 
-		   generated="never" 
-		   not-null="true"
-		   name="username"
-		   type="string">
-		   <meta attribute="use-in-tostring">true</meta>
-	    </property>
-	
-	    <property 
-	       generated="never" 
-	       not-null="true"
-	       name="password"
-	       type="string">
-	    </property>
-	    
-	    <property 
-           generated="never" 
-           not-null="true"
-           name="permission"
-           type="int">
-        </property>
+
+		<property generated="never" not-null="true" name="username"
+			type="string">
+			<meta attribute="use-in-tostring">true</meta>
+		</property>
+
+		<property generated="never" not-null="true" name="password"
+			type="string">
+		</property>
+
+		<property generated="never" not-null="true" name="permission"
+			type="int">
+		</property>
 
 	</class>
 </hibernate-mapping>

@@ -2,52 +2,24 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
     "http://struts.apache.org/dtds/struts-2.3.dtd">
-	
 
 <struts>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.custom.i18n.resources" value="mesRes" />
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.devMode" value="true" />
+	<package name="rockIT" extends="struts-default">
 
-	<constant name="struts.custom.i18n.resources" value="param"/>
-	<constant name="struts.i18n.encoding" value="utf-8"/>
-	
-	
-	<package name="always" extends="struts-default">
-
-		<!-- 登录 -->
-		<action name="login" class="com.factoryproject.action.LoginAction">
-			
-			<result name="success">/home.jsp</result>
+		<action name="loginAction" class="com.factoryproject.action.LoginAction">
 			<result name="input">/index.jsp</result>
-			<result name="error">/error.jsp</result>
+			<result name="success">/welcome.jsp</result>
+			<result name="error">/loginError.jsp</result>
 		</action>
 		
-		<!-- 登出 -->
 		<action name="logout" class="com.factoryproject.action.LogoutAction">
-			
-			<result name="input">/index.jsp</result>
-			<result name="erorr">/erorr.jsp</result>
+			<result name="success">/index.jsp</result>
+			<result name="error">/logoutError.jsp</result>
 		</action>
-		
-		<!-- 注册 -->
-		<!-- <action name="register" class="com.factoryproject.action.RegisterAction">
-			
-			<result name="input">/register.jsp</result>
-			<result name="success">/registerSuccess.jsp</result>
-			<result name="error">/erorr.jsp</result>
-		</action> -->
-		
-		<!-- 发表留言 -->
-		<!-- <action name="leavingMessage" class="com.factoryproject.action.CreateMessageAction">
-			
-			<result name="success">/message.jsp</result>
-			<result name="input">/leavingMessage.jsp</result>
-			<result name="error">/erorr.jsp</result>
-		</action> -->
-		
-		<!-- 展示留言 -->
-		<!-- <action name="displayMessage" class="com.factoryproject.action.DisplayMessageAction">
-			
-			<result name="success">/message.jsp</result>
-			<result name="error">/erorr.jsp</result>
-		</action> -->
 	</package>
+
 </struts>
